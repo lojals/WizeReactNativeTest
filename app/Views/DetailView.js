@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, View, Image, Navigator } from 'react-native';
-import { CustomStatusBar } from './app/CustomStatusBar';
+import { CustomStatusBar } from '../CustomStatusBar';
 import {Container, Content, Header, Title, Text, Icon, Button} from 'native-base';
-import { DevelopersListView } from './app/DevelopersListView';
-import AppNavigator from './app/AppNavigator'
+import { DevelopersListView } from '../DevelopersListView';
+import AppNavigator from '../AppNavigator'
 
 class WizelineDemo extends Component {
   render() {
@@ -15,9 +15,6 @@ class WizelineDemo extends Component {
       <View style={styles.container}>
         <CustomStatusBar/>
         <View style={styles.internalContainter}>
-          <Image source={pic} style={styles.WizeIcon}/>
-          <Text>Testing React-Native and trolling COD players</Text>
-          <Button block primary onPress={this._onPressButton}> Check out the team </Button>
           <DevelopersListView/>
         </View>
       </View>
@@ -45,5 +42,3 @@ const styles = StyleSheet.create({
     height: 100
   }
 });
-
-AppRegistry.registerComponent('WizelineDemo', () => WizelineDemo);
