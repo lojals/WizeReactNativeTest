@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, View, Image, Navigator } from 'react-native';
+import { AppRegistry, StyleSheet, View, Image, Navigator, Text } from 'react-native';
 import { CustomStatusBar } from '../CustomStatusBar';
-import {Container, Content, Header, Title, Text, Icon, Button} from 'native-base';
 import { DevelopersListView } from '../DevelopersListView';
-import AppNavigator from '../AppNavigator'
 
-class WizelineDemo extends Component {
+export class DetailView extends Component {
+  constructor(props) {
+      super(props)
+  }
+
   render() {
-    let pic = {
-          uri: 'https://funderbeam-706056.c.cdn77.org/logos/CO/wizeline.jpeg?1458073669'
-        };
-
     return (
       <View style={styles.container}>
         <CustomStatusBar/>
@@ -36,9 +34,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  WizeIcon:{
-    width:  100,
-    height: 100
   }
 });

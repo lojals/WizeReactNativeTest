@@ -5,6 +5,7 @@ import api from './api';
 export class DevelopersListView extends Component {
   constructor(props){
     super(props)
+
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2})
     this.state = {
       developers: ds.cloneWithRows([])
@@ -27,7 +28,7 @@ export class DevelopersListView extends Component {
           dataSource          = {this.state.developers}
           renderRow           = {(developer) => { return this._renderDeveloperRow(developer) }}
           refreshable         = {true}
-          renderSeparator={this._renderSeparator}
+          renderSeparator     = {this._renderSeparator}
           enableEmptySections = {true}/>
       </View>
     );
@@ -35,7 +36,7 @@ export class DevelopersListView extends Component {
 
   _renderDeveloperRow(data) {
       return (
-        <TouchableOpacity style={styles.row}>
+        <TouchableOpacity style={styles.row} onPress={(event) => this._onPressButton(event) }>
           <Text>{data.team_name}</Text>
         </TouchableOpacity>
       );
@@ -49,6 +50,13 @@ export class DevelopersListView extends Component {
          backgroundColor: adjacentRowHighlighted ? '#3B5998' : '#CCCCCC'}}
          />
      );
+   }
+
+   _onPressButton(test){
+     this.props.navigator.push({
+      ident: "DetailView"
+     })
+    console.log("Hola desde la celda papu");
    }
 }
 
