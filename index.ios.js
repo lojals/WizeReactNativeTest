@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
-import AppNavigator from './app/AppNavigator'
+import { AppRegistry }      from 'react-native';
+import { AppNavigator }     from './app/AppNavigator'
 
 class WizelineDemo extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class WizelineDemo extends Component {
 
   render() {
     return (
-      <AppNavigator initialRoute={{ident: "TeamsListView" , index: 0}} />
+      <AppNavigator initialRoute={{ident: "TeamsListView"}} />
     );
   }
 }

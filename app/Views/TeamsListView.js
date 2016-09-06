@@ -7,8 +7,6 @@ import { DevelopersListView } from '../DevelopersListView';
 export class TeamsListView extends Component {
   constructor(props) {
       super(props)
-
-      console.log(this.props.test);
   }
 
   render() {
@@ -26,13 +24,6 @@ export class TeamsListView extends Component {
         </View>
       </View>
     );
-  }
-
-  _onPressButton(team){
-    this.props.navigator.push({
-     ident: "DetailView"
-    })
-   console.log("Hola desde la celda papu");
   }
 }
 

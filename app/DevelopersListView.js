@@ -13,7 +13,7 @@ export class DevelopersListView extends Component {
   }
 
   componentWillMount(){
-      api.getDevelopersFromApiAsync().then((res) => {
+      api.getTeamsFromApiAsync().then((res) => {
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2})
         this.setState({ developers: ds.cloneWithRows(res) });
       });
@@ -36,8 +36,8 @@ export class DevelopersListView extends Component {
 
   _renderDeveloperRow(data) {
       return (
-        <TouchableOpacity style={styles.row} onPress={(event) => this._onPressButton(event) }>
-          <Text>{data.team_name}</Text>
+        <TouchableOpacity style={styles.row} onPress={(event) => this._onPressButton(data.members) }>
+          <Text>{data.name}</Text>
         </TouchableOpacity>
       );
   }
@@ -52,15 +52,13 @@ export class DevelopersListView extends Component {
      );
    }
 
-   _onPressButton(test){
+   _onPressButton(team){
      this.props.navigator.push({
-      ident: "DetailView"
-     })
-    console.log("Hola desde la celda papu");
+      ident: "DetailView",
+      team:  team
+    });
    }
 }
-
-
 
 const styles = StyleSheet.create({
   row: {

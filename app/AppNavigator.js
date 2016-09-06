@@ -4,18 +4,18 @@ import { StyleSheet, View, Navigator, Text } from 'react-native';
 import { DetailView } from '../app/Views/DetailView'
 import { TeamsListView } from '../app/Views/TeamsListView'
 
-class AppNavigator extends Component {
+export class AppNavigator extends Component {
 
   _renderScene(route, navigator) {
     var globalNavigatorProps = { navigator }
     switch(route.ident) {
       case "TeamsListView":
       return (
-        <TeamsListView  navigator={navigator} test="HOLA MUNDO"/>
+        <TeamsListView  {...globalNavigatorProps}/>
       )
       case "DetailView":
         return (
-          <DetailView  navigator={navigator}/>
+          <DetailView  {...globalNavigatorProps} team={route.team}/>
         )
       default:
         return (
@@ -31,17 +31,13 @@ class AppNavigator extends Component {
         ref="appNavigator"
         renderScene={this._renderScene}
         configureScene={(route) => ({
-          ...route.sceneConfig || Navigator.SceneConfigs.FloatFromRight })}/>
+          ...route.sceneConfig || Navigator.SceneConfigs.PushFromRight })}/>
     )
   }
 }
 
 const styles = StyleSheet.create({
-
   navigatorStyles: {
 
   }
-
 })
-
-module.exports = AppNavigator
