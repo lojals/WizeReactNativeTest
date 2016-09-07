@@ -26,11 +26,16 @@ const styles = StyleSheet.create({
   },
   textName:{
     fontStyle: 'normal',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 10
   },
   textCodID:{
     fontStyle: 'normal'
   },
+  textWidthFixed:{
+    width: 250,
+    textAlign: 'center'
+  }
 });
 
 module.exports = styles

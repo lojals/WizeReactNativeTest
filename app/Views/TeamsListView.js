@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, View, Image, Navigator,  TouchableOpacity} from 'react-native';
+import { AppRegistry, StyleSheet, View, Image, Navigator,  TouchableOpacity, NativeModules} from 'react-native';
 import { Button, Text } from 'native-base';
 import { CustomStatusBar } from '../CustomStatusBar';
 import { DevelopersListView } from '../DevelopersListView';
@@ -19,8 +19,8 @@ export class TeamsListView extends Component {
         <CustomStatusBar/>
         <View style={styles.internalContainter}>
           <Image source={pic} style={styles.WizeIcon}/>
-          <Text>Testing React-Native and trolling COD players</Text>
-          <DevelopersListView navigator={this.props.navigator} />
+          <Text style={styles.TextIntro}>Testing React-Native and trolling COD players</Text>
+          <DevelopersListView  navigator={this.props.navigator} />
         </View>
       </View>
     );
@@ -29,11 +29,9 @@ export class TeamsListView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    backgroundColor: '#282C34'
+    flex:1
   },
   internalContainter: {
-    margin: 30,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
@@ -41,5 +39,11 @@ const styles = StyleSheet.create({
   WizeIcon:{
     width:  100,
     height: 100
+  },
+  TextIntro:{
+    width: 150,
+    marginTop: 15,
+    marginBottom: 15,
+    textAlign: 'center'
   }
 });

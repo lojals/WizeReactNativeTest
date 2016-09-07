@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, View, Image, Navigator, Text, ListView, TouchableOpacity } from 'react-native';
+import { Container, Header, Title, Icon, Button, View, Text, Content, Thumbnail} from 'native-base';
+import { AppRegistry, StyleSheet, Image, Navigator, ListView, TouchableOpacity } from 'react-native';
 import { CustomStatusBar } from '../CustomStatusBar';
 import { DevelopersListView } from '../DevelopersListView';
 import { LineDivisor } from '../LineDivisor';
@@ -16,31 +17,41 @@ export class DetailView extends Component {
 
   render() {
     return (
-      <View style ={styles.container}>
-        <CustomStatusBar/>
-        <ListView
-          style               = {styles.internalContainter}
-          initialListSize     = {10}
-          dataSource          = {this.state.members}
-          renderRow           = {(member) => { return this._renderDeveloperRow(member) }}
-          renderSeparator     = {this._renderSeparator}
-          refreshable         = {true}
-          enableEmptySections = {true}/>
-      </View>
+
+      <Container style={{backgroundColor:'white'}} >
+               <Header>
+                   <Button transparent onPress={(event) => this._onPressButton()}>
+                       <Icon name='ios-arrow-back' />
+                   </Button>
+                   <Title>Members</Title>
+               </Header>
+               <Content>
+               <ListView
+                 style               = {styles.internalContainter}
+                 initialListSize     = {10}
+                 dataSource          = {this.state.members}
+                 renderRow           = {(member) => { return this._renderDeveloperRow(member) }}
+                 renderSeparator     = {this._renderSeparator}
+                 refreshable         = {true}
+                 enableEmptySections = {true}/>
+                 </Content>
+           </Container>
     );
   }
 
+  _onPressButton(){
+    this.props.navigator.pop();
+  }
+
   _renderDeveloperRow(data) {
-      let pic = {
-          uri: 'https://funderbeam-706056.c.cdn77.org/logos/CO/wizeline.jpeg?1458073669'
-      };
+      let pic = {  uri: data.picture };
       return (
         <TouchableOpacity style={styles.row}>
-          <Image source={pic} style={styles.userImage}/>
-          <Text style={styles.textName} >{data.name}</Text>
-          <Text style={styles.textCodID} >{data.codId}</Text>
+          <Thumbnail size={64} source={pic}/>
+          <Text style={[styles.textName, styles.textWidthFixed]} >{data.name}</Text>
+          <Text style={[styles.textCodID, styles.textWidthFixed]} >{data.codId}</Text>
           <LineDivisor/>
-          <Text style={styles.textDescription} >{data.description}</Text>
+          <Text style={[styles.textDescription, styles.textWidthFixed]} >{data.description}</Text>
         </TouchableOpacity>
       );
   }

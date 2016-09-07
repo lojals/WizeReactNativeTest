@@ -68,10 +68,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#F6F6F6',
       flex:1
     },
-    thumb: {
-      width: 64,
-      height: 64,
-    },
     text: {
       flex: 1,
     }

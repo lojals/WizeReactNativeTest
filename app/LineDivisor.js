@@ -15,5 +15,4 @@ export class LineDivisor extends Component {
       </View>
     );
   }
-
 }

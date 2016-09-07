@@ -5,7 +5,7 @@
 			"members": [{
 					"name": "Julián Limón",
 					"codId": "Limon",
-					"picture": "",
+					"picture": "https://i.imgur.com/goWo0h0.png",
 					"description": "💻"
 				}]
 		},
@@ -14,12 +14,12 @@
 			"members": [{
 				"name": "Miguel Villaseñor",
 				"codId": "Mike",
-				"picture": "",
+				"picture": "https://i.imgur.com/i2KZiVJ.png",
 				"description": "WFH is my best mood, I mean my unique mood!"
 			}, {
 				"name": "Sergio Lagunas",
 				"codId": "Shekomaru",
-				"picture": "",
+				"picture": "https://i.imgur.com/r1koM85.png",
 				"description": "Camping why not?"
 			}]
 		},
@@ -28,27 +28,27 @@
 			"members": [{
 				"name": "Diego Navarro",
 				"codId": "dnavarro - dgambit",
-				"picture": "",
-				"description": "I don’t always play CoD, but when I do, I get a boner"
+				"picture": "https://i.imgur.com/hsQpNaz.png",
+				"description": "Beer (?) - AKA Kung Fu Panda or Paquita"
 			}, {
 				"name": "Hugo Peregrina",
 				"codId": "hugoperegrina - Yo momma - LordTocino",
-				"picture": "",
+				"picture": "https://i.imgur.com/TDxWocg.png",
 				"description": "My shoulder hurts."
 			}, {
 				"name": "Alonso Guevara",
 				"codId": "Alonso",
-				"picture": "",
+				"picture": "https://i.imgur.com/wNDkGAF.png",
 				"description": "I like kids. IYKWIM"
 			}, {
 				"name": "Srdjan Lakovic",
 				"codId": "srdjan - bgd011 - sirjuan",
-				"picture": "",
+				"picture": "https://i.imgur.com/6XGld2a.png",
 				"description": "Alcaster > Beer"
 			}, {
 				"name": "Jorge Ovalle",
 				"codId": "lojals",
-				"picture": "",
+				"picture": "https://i.imgur.com/3Xctz10.png",
 				"description": "345 is my lucky number 😅"
 			}]
 		},
@@ -57,8 +57,8 @@
 			"members": [{
 						"name": "José Luis Hernández",
 						"codId": "drac94",
-						"picture": "",
-						"description": "I like Python and my smelly puff."
+						"picture": "https://i.imgur.com/6sUjcMp.png",
+						"description": "Be part of a team is my passion along with my puff and python."
 					}]
 		}
 	]
