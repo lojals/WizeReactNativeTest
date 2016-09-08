@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Header, Title, Icon, Button, View, Text, Content, Thumbnail} from 'native-base';
-import { AppRegistry, StyleSheet, Image, Navigator, ListView, TouchableOpacity } from 'react-native';
+import { AppRegistry, StyleSheet, Image, Navigator, ListView, TouchableOpacity, NativeModules } from 'react-native';
 import { CustomStatusBar } from '../CustomStatusBar';
 import { DevelopersListView } from '../DevelopersListView';
 import { LineDivisor } from '../LineDivisor';
@@ -43,10 +43,16 @@ export class DetailView extends Component {
     this.props.navigator.pop();
   }
 
+  _runNativeAction(user){
+    console.log('Executing something native');
+    var exportableClass = NativeModules.ExportableClass;
+    exportableClass.startServer(user.codId);
+  }
+
   _renderDeveloperRow(data) {
       let pic = {  uri: data.picture };
       return (
-        <TouchableOpacity style={styles.row}>
+        <TouchableOpacity style={styles.row} onPress={(event) => this._runNativeAction(data)}>
           <Thumbnail size={64} source={pic}/>
           <Text style={[styles.textName, styles.textWidthFixed]} >{data.name}</Text>
           <Text style={[styles.textCodID, styles.textWidthFixed]} >{data.codId}</Text>

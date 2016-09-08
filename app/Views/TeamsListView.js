@@ -20,7 +20,7 @@ export class TeamsListView extends Component {
         <View style={styles.internalContainter}>
           <Image source={pic} style={styles.WizeIcon}/>
           <Text style={styles.TextIntro}>Testing React-Native and trolling COD players</Text>
-          <DevelopersListView  navigator={this.props.navigator} />
+          <DevelopersListView navigator={this.props.navigator} />
         </View>
       </View>
     );
